@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Container, Form, Button } from 'react-bootstrap';
 import './Login.css';
 
 
@@ -12,6 +12,8 @@ export default function Login() {
     <Form.Label> Name </Form.Label>
     <Form.Control type="text" ref={idRef} required />
     </Form.Group>
+    <Button className="btn btn-danger" type="submit"> Login
+    </Button>
     </Form>
     </Container>
   )
