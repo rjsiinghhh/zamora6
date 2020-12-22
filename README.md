@@ -7,6 +7,11 @@ I have done many versions of this project, and all came to something I did not l
 for this project I want to start with
 
 -Login Page / Sign Up Page
+(Login page will have .. NAME, ID )
+
+
+
+
 -Dashboard
  (The dashboard will have everything on it.
     - Type,
