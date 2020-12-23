@@ -1,21 +1,24 @@
 import { useEffect, useState } from 'react';
 
-const PREFIX = "zamora-project-"
+
+const PREFIX = 'zamora'
+
 
 export default function useLocalStorage(key, initialValue) {
   const prefixedKey = PREFIX + key
   const [value, setValue] = useState(() => {
-    const jsonValue = useLocalStorage.getItem(prefixedKey)
+    const jsonValue = localStorage.getItem(prefixedKey)
     if(jsonValue != null) return JSON.parse(jsonValue)
-    if(typeof initialValue === 'function') {
+    if (typeof initialValue === 'function') {
       return initialValue()
-    }else {
+    } else {
       return initialValue
     }
   })
-    useEffect(() => {
-      localStorage.setItem(prefixedKey, JSON.stringify(value))
-    }, [prefixedKey, value])
 
-    return [value, setValue]
+  useEffect(() => {
+    localStorage.setItem(prefixedKey, JSON.stringify(value))
+  }, [prefixedKey, value])
+
+  return [value, setValue]
 }
