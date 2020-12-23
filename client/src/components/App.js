@@ -1,9 +1,15 @@
 import React from 'react';
 import Login from './Login';
+import useLocalStorage from '../hooks/useLocalStorage'
 
 function App() {
+  const [id, setId] = useLocalStorage()
+
   return(
-    <Login />
+    <>
+    {id}
+    <Login onIdSubmit={setId} />
+    </>
   );
 }
 
